@@ -30,7 +30,7 @@
   }
 
   .card {
-    width: 360px;
+    width: 400px;
     max-width: 90%;
     background: rgba(255,255,255,0.95);
     color: #222;
@@ -202,3 +202,4 @@
   @media (max-width:480px){
     .card { padding:18px; } 
   }
+
