@@ -1,0 +1,120 @@
+body {
+  min-height: 100vh;
+  margin: 0;
+  background: linear-gradient(135deg, #a259c2 0%, #7b2ff2 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+.envelope-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.envelope {
+  width: 600px;
+  height: 400px;
+  position: relative;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: #512599 0px 8px 24px,  #a259c2 0px 6px 48px;
+  overflow: hidden;
+  z-index: 1;
+  margin-bottom: 20px;
+
+  /* 👇 transition for fading out the envelope */
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+/* Envelope fades + shrinks when opened */
+.envelope.open {
+  opacity: 0;
+  transform: scale(0.9);
+}
+ 
+
+.envelope-flap {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 600px;
+  height: 220px; /* flap height */
+  background: none;
+  z-index: 2;
+  pointer-events: none;
+}
+
+.envelope-flap-shape {
+  width: 100%;
+  height: 100%;
+  background: #fff;
+  clip-path: polygon(0 0, 100% 0, 50% 100%); /* triangular flap */
+  transform-origin: top center;
+  transition: transform 2s ease; /* matches JS flapOpenDuration */
+}
+
+/* Flap opens */
+.envelope.open .envelope-flap-shape {
+  transform: rotateX(-180deg);
+}
+
+/* Tulip animation */
+@keyframes tulip-bounce {
+  0%, 100% { transform: translateX(-50%) scale(1); }
+  50% { transform: translateX(-50%) scale(1.1); }
+}
+
+.tulip-seal {
+  position: absolute;
+  top: 150px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 88px;
+  height: 80px;
+  z-index: 3;
+  animation: tulip-bounce 1.7s infinite;
+  cursor: pointer;
+  filter: drop-shadow(0 2px 6px #c97bb233);
+  user-select: none;
+  border-radius: 50%;
+  background: transparent;
+  border: none;
+  outline: none;
+
+  /* 👇 smooth fade/shrink */
+  transition: opacity 2s ease, transform 2s ease;
+}
+
+/* Tulip fades + shrinks when opened */
+.envelope.open .tulip-seal {
+  opacity: 0;
+  transform: translateX(-50%) scale(0.8);
+  animation: none; /* stop bouncing */
+}
+
+/* Shadow under envelope */
+.envelope-shadow {
+  position: absolute;
+  bottom: -18px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 22px;
+  background: radial-gradient(ellipse at center, #0002 60%, transparent 100%);
+  border-radius: 50%;
+  filter: blur(1px);
+  z-index: 0;
+  pointer-events: none;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .envelope { width: 140px; height: 90px; }
+  .envelope-flap { width: 140px; height: 70px; }
+  .tulip-seal { width: 32px; height: 32px; top: 28px; }
+  .envelope-shadow { width: 68px; height: 11px; }
+}

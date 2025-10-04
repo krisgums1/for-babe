@@ -1,0 +1,204 @@
+:root {
+    --accent: #712be0;
+    --bg-grad: linear-gradient(135deg, #893fa8 0%, #5107c9 100%);
+  }
+
+  html,body { 
+    height:100%; 
+    margin:0; font-family: "Helvetica Neue", Arial, sans-serif; 
+  }
+
+  body {
+    min-height:100vh;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: var(--bg-grad) !important;
+    color:#fff;
+    overflow:hidden;
+    position:relative;
+  }
+  
+  .ready {
+    position: fixed;
+    inset: 0;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background: rgba(0,0,0,0.25);
+    z-index: 80;
+  }
+
+  .card {
+    width: 360px;
+    max-width: 90%;
+    background: rgba(255,255,255,0.95);
+    color: #222;
+    border-radius: 14px;
+    padding: 25px;
+    text-align:center;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.35);
+    position:relative;
+  }
+
+  .mochi-img {
+    width: 200px;
+    height: auto;
+    display: block;
+    margin: auto;  
+  }
+
+  .card h2 {
+    margin: none;
+    color: var(--accent);
+    font-size: 22px;
+  }
+
+  .card p {
+    margin: 0 0 12px;
+  }
+
+  .ready-buttons {
+    display:flex;
+    gap:12px;
+    justify-content:center;  
+    margin-bottom: 10px;
+  }
+
+  .btn {
+    margin-left: 10%;
+    padding:10px 16px;
+    border-radius:10px;
+    border:none;
+    font-weight:600;
+    cursor:pointer;
+    background: var(--accent);
+    color: #fff;
+  }
+
+ .btn:hover {
+    background: #5e09ce;  
+    transform: scale(1.04); 
+  }
+  
+  .btn:active {
+    transform: scale(0.95);  
+  }
+  
+  .btn.secondary {
+    background: #e6e6e6;
+    color: #333;
+    width: 65%;
+    height: 100%;
+    padding:10px 16px;
+    border-radius:10px;
+  }
+
+  .no-wrapper { 
+    position: relative; 
+    min-width: 90px; 
+    min-height: 42px; 
+    display:inline-block; 
+  }
+
+  .no-btn {
+    position: absolute;
+    left: 0;
+    top: 0;
+  }
+
+
+  /*  Game container (hidden until modal dismissed) */
+  .game-wrapper {
+    z-index: 10;
+    width: 420px;
+    max-width: 92%;
+    background: rgba(255,255,255,0.90);
+    padding: 22px;
+    border-radius: 12px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.35);
+    text-align:center;
+    font-weight: bold;
+
+  }
+  
+  .mochi-imgs {
+    width: auto;
+    height: 200px;
+    display: block;
+    margin: 15px auto ;
+  }
+
+  .question { 
+    margin:12px 0; 
+    color:var(--accent); 
+  }
+
+  input[type="text"] {
+    padding:10px 12px;
+    width:80%;
+    border-radius:8px;
+    border:none;
+    outline:none;
+    margin-bottom:10px;
+  }
+
+  .controls { 
+    margin-top:8px; 
+  }
+
+  .controls button {
+    padding:8px 12px;
+    border-radius:8px;
+    border:none;
+    cursor:pointer;
+    margin:6px;
+    font-weight:700;
+    width: 70px;
+  }
+
+   .controls .submit { 
+    background:var(--accent); 
+    color:#fff; 
+    
+  }
+
+  .controls .hint { 
+    background: #a84fe4; 
+    color:#fff; 
+  
+  }
+  .submit:hover {
+    background: #5e09ce;  
+    transform: scale(1.03); 
+    
+  }
+  
+  .submit:active {
+    transform: scale(0.95);  
+  }
+  
+  .hint:hover {
+    background: #9f1ef5;  
+    transform: scale(1.03); 
+  }
+  
+  .hint:active {
+    transform: scale(0.95);  
+  }
+  .result { 
+    margin-top:12px; 
+    font-weight:700; 
+    min-height:28px; 
+  }
+  
+  .hint-text { 
+    margin-top:5px; 
+    font-style:italic; 
+    color: #9f1ef5; 
+    min-height:20px; 
+  }
+
+  @media (max-width:480px){
+    .card { padding:18px; } 
+  }
