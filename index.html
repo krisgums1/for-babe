@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<link rel="stylesheet" href="css/quiz.css">
+<script src="js/quiz.js" defer></script>
+<title>Gameu</title>
+</head>
+<body>
+  <div class="ready" id="ready" aria-modal="true">
+    <div class="card" id="card">
+      <img src="css/images/cat.png" class="mochi-img"/>
+      <h2>Are you ready love?</h2>
+      <p>Take a deep breath, babe. Shall we start the little truth game about us?</p><br>       
+      <div class="ready-buttons" aria-hidden="false">
+        <button class="btn" id="yesBtn">Yes</button> 
+        <div class="no-wrapper" id="noWrap" >
+          <button class="btn secondary no-btn" id="noBtn">No</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- hidden game modal -->  
+  <div class="game-wrapper" id="game" style="display:none;">
+    <img class="mochi-imgs"  id="mochiImg"/>
+    <div class="question" id="questionText">Loading question…</div>
+    <input type="text" id="answerInput" placeholder="Type your answer love..." autocomplete="off" />
+    <div class="controls">
+      <button class="submit" id="submitBtn">Submit</button>
+      <button class="hint" id="hintBtn">Hint</button>
+    </div>
+    <div class="result" id="result"></div>
+    <div class="hint-text" id="hintText"></div>
+  </div>
+
+</body>
+</html>
