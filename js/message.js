@@ -48,3 +48,19 @@
   // Default active button = Letter
   buttons[0].classList.add("active");
 })();
+ function preloadImages(imageUrls) {
+    imageUrls.forEach(src => {
+      const img = new Image();
+      img.src = src;
+    });
+  }
+
+  // preload images
+  const imagesToPreload = [
+    'images/blues.png',
+    'images/poem.jpg',
+    'images/Freiren.png'
+  ];
+
+  preloadImages(imagesToPreload);
+})();
