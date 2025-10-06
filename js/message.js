@@ -63,4 +63,5 @@
   ];
 
   preloadImages(imagesToPreload);
-})();
+
+
