@@ -57,11 +57,12 @@
 
   // preload images
   const imagesToPreload = [
-    'images/blues.png',
-    'images/poem.jpg',
-    'images/Freiren.png'
+    'css/images/blues.png',
+    'css/images/poem.jpg',
+    'css/images/Freiren.png'
   ];
 
   preloadImages(imagesToPreload);
+
 
 
